@@ -1,24 +1,223 @@
-.App {
-  text-align: center;
+html {
+  box-sizing: border-box;
+  height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+#root {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.App-intro {
-  font-size: large;
+body {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-image: url(./assets/image/background-blue.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-@keyframes App-logo-spin {
+#container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
+  transform: scale(0.1);
+  opacity: 0;
+  transition: transform 2s, opacity 1s;
+}
+
+@media screen and (min-width: 768px) {
+  #container {
+    width: 32%;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+#clock {
+  position: absolute;
+  top: -5.1%;
+  left: 0.9%;
+  width: 81.0%;
+  border-radius: 50%;
+  background: #000;
+  background: linear-gradient(30deg, 
+                                    #111 30%, 
+                                    #888 80%, 
+                                    #fff 92%, 
+                                    #fff 100%);
+  filter: blur(0.3px);
+  transform: rotateX(44deg) 
+             rotateY(-18deg) 
+             rotateZ(9deg) 
+             skewX(-11deg) 
+             skewY(9deg);
+}
+
+#clock:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+#second-hand {
+  position: absolute;
+  top: 10%; /* 50 - height */
+  left: 49.5%; /* 50 - width/2 */
+  height: 40%; 
+  width: 1%;
+  background: #00D8FF;
+  transform-origin: bottom;
+}
+
+#minute-hand {
+  position: absolute;
+  top: 15%; /* 50 - height */
+  left: 49%; /* 50 - width/2 */
+  height: 35%; 
+  width: 2%;
+  background: rgb(255,255,255);
+  transform-origin: bottom;
+}
+
+#hour-hand {
+  position: absolute;
+  top: 30%; /* 50 - height */
+  left: 49%; /* 50 - width/2 */
+  height: 20%; 
+  width: 2%;
+  background: rgb(255,255,255);
+  transform-origin: bottom;
+}
+
+#center-outside {
+  position: absolute;
+  top: 48%; /* 50 - width/2 */
+  left: 48%; /* 50 - width/2 */
+  width: 4%;
+  height: 4%;
+  border-radius: 50%;
+  background: #fff;
+}
+
+#center-inside {
+  position: absolute;
+  top: 49%; /* 50 - width/2 */
+  left: 49%; /* 50 - width/2 */
+  width: 2%;
+  height: 2%;
+  border-radius: 50%;
+  background: #000;
+}
+
+#decoration {
+  position: absolute;
+  top: 1.5%;
+  left: 1.5%;
+  width: 97%;
+  height: 97%;
+}
+
+#logo-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 17%;
+  left: 42%; /* 50 - width/2 */
+  width: 16%;
+  height: 16%;
+}
+
+#watch-logo {
+  animation: watch-logo-spin infinite 40s linear;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes watch-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+
+.marker {
+  position: absolute;
+  top: 0%;
+  left: 49.75%; /* 50 - width/2 */ 
+  width: 0.5%;
+  height: 50%;
+  background: rgba(255,255,255,0.25);
+  transform-origin: bottom;
+}
+
+#marker-cover {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: black;
+  border-radius: 50%;
+}
+
+.marker:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.marker:nth-child(2) {
+  transform: rotate(30deg);
+}
+
+.marker:nth-child(3) {
+  transform: rotate(60deg);
+}
+
+.marker:nth-child(4) {
+  transform: rotate(90deg);
+}
+
+.marker:nth-child(5) {
+  transform: rotate(120deg);
+}
+
+.marker:nth-child(6) {
+  transform: rotate(150deg);
+}
+
+.marker:nth-child(7) {
+  transform: rotate(180deg);
+}
+
+.marker:nth-child(8) {
+  transform: rotate(210deg);
+}
+
+.marker:nth-child(9) {
+  transform: rotate(240deg);
+}
+
+.marker:nth-child(10) {
+  transform: rotate(270deg);
+}
+
+.marker:nth-child(11) {
+  transform: rotate(300deg);
+}
+
+.marker:nth-child(12) {
+  transform: rotate(330deg);
 }
